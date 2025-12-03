@@ -8,6 +8,7 @@ dotenv.config();  // ✅ 이게 최상단에 와야 함
 const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
+const timetableRoutes = require("./routes/timetable");
 
 const app = express();
 
@@ -19,8 +20,9 @@ app.get("/", (req, res) => {
   res.send("API 서버 정상 동작!");
 });
 
-// /auth 라우트
+//  라우트
 app.use("/auth", authRoutes);
+app.use("/timetable", timetableRoutes);
 
 const PORT = process.env.PORT || 4000;
 
