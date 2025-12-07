@@ -9,6 +9,7 @@ const express = require("express");
 const cors = require("cors");
 const authRoutes = require("./routes/auth");
 const timetableRoutes = require("./routes/timetable");
+const matchRoutes = require("./routes/match");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.get("/", (req, res) => {
 //  라우트
 app.use("/auth", authRoutes);
 app.use("/timetable", timetableRoutes);
+app.use("/match", matchRoutes); 
 
 const PORT = process.env.PORT || 4000;
 
